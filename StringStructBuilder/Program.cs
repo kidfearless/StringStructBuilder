@@ -27,16 +27,18 @@ namespace StringStructBuilder
 
 		static string BuildString(int i)
 		{
-			return	"#define STRING_SIZE " + $"{i}" +
-					$"enum struct string_{i}" +
+			return	"#undef STRING_SIZE" + 
+					"\n#define STRING_SIZE " + $"{i}" +
+					$"\nenum struct string_{i}" +
 					"\n{" +
 					"\n\t#include \"strings_include\"" +
 					"\n}";
 		}
 		static string BuildBaseString()
 		{
-			return	"#define STRING_SIZE 2048" +
-					$"enum struct string" +
+			return	"#undef STRING_SIZE" +
+					"\n#define STRING_SIZE 2048" +
+					$"\nenum struct string" +
 					"\n{" +
 					"\n\t#include \"strings_include\"" +
 					"\n}";
